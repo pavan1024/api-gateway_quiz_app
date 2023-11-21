@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "053556d0-2475-4dc1-931a-bb8bee5f5c77",
+		"name": "Quiz Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quiz/create?category=Java&numberOfQuestions=5&title=Jtest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz",
+						"create"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Java"
+						},
+						{
+							"key": "numberOfQuestions",
+							"value": "5"
+						},
+						{
+							"key": "title",
+							"value": "Jtest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quiz by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/quiz/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"quiz",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit(post) Quiz Answers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\" : \"50\",\r\n        \"response\" : \"do while\"\r\n    },\r\n     {\r\n        \"id\" : \"1\",\r\n        \"response\" : \"do while\"\r\n    },\r\n     {\r\n        \"id\" : \"52\",\r\n        \"response\" : \"finally\"\r\n    }, \r\n    {\r\n        \"id\" : \"60\",\r\n        \"response\" : \"ArrayList\"\r\n    }, \r\n    {\r\n        \"id\" : \"53\",\r\n        \"response\" : \"ArrayList\"\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/quiz/submit/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"quiz",
+						"submit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

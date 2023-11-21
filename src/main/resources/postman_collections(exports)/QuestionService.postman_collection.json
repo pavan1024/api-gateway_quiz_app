@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "ac6847f1-2597-4034-858e-7d38a14c7716",
+		"name": "QuestionService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate Question Ids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions/generate?category=Java&numberOfQuestions=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Java"
+						},
+						{
+							"key": "numberOfQuestions",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Ids and get Questions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    50,\r\n    54,\r\n    30,\r\n    90,\r\n    1\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions/getQuestions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"getQuestions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Questions Copy 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 50,\r\n        \"response\": \"+\"\r\n    },\r\n    {\r\n        \"id\": 54,\r\n        \"response\": \"do while\"\r\n    },\r\n    {\r\n        \"id\": 30,\r\n        \"response\": \"Independent of object\"\r\n    },\r\n    {\r\n        \"id\": 90,\r\n        \"response\": \"do while\"\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"response\": \"do while\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions/getScore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"getScore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Questions By Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions/category/Java",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"category",
+						"Java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n {\r\n        \"questionTitle\": \"Which loop?\",\r\n        \"option1\": \"for loop\",\r\n        \"option2\": \"while loop\",\r\n        \"option3\": \"do while\",\r\n        \"option4\": \"switch loop\",\r\n        \"rightAnswer\": \"do while\",\r\n        \"category\": \"Java\",\r\n        \"difficultylevel\": \"Easy\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"question"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
